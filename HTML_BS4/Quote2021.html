@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html class=" video supports csstransitions csstransforms3d"><head>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <meta charset="utf-8">
+    <title>Rocket Elevators - Price Estimate Form</title>
+    <meta name="description" content="Rocket Elevators - Price Estimate Form">
+    <meta name="Author" content="Isaac Laquerre [www.codeboxx.biz]">
+	<!-- mobile settings -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+	<!-- WEB FONTS : use %7C instead of | (pipe) -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet" type="text/css">
+
+	<!-- CORE CSS -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<!-- REVOLUTION SLIDER -->
+	<link href="assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css">
+	<link href="assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css">
+
+	<!-- THEME CSS -->
+	<link href="assets/css/essentials.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/layout.css" rel="stylesheet" type="text/css">
+
+	<!-- PAGE LEVEL SCRIPTS -->
+	<link href="assets/css/header-1.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/color_scheme/darkblue.css" rel="stylesheet" type="text/css" id="color_scheme">
+        
+	<!-- JQUERY -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <style>
+        #form {
+            font-size: 18px;
+            font-family: system-ui;
+            text-align: center;
+        }
+
+        #residential,
+        #commercial,
+        #corporate,
+        #hybrid {
+            display: none;
+        }
+
+        #residentialDiv,
+        #commercialDiv,
+        #corporateDiv,
+        #hybridDiv {
+            display: none;
+        }
+
+        #submitButton {
+            background: #0066A2;
+            color: white;
+            border-style: outset;
+            border-color: #0066A2;
+            border-radius: 5px;
+            height: 25px;
+            width: 100px;
+            font: bold 15px arial, sans-serif;
+            text-shadow: none;
+        }
+
+        #submitButton:hover {
+            background: rgb(0, 86, 136);
+            color: rgb(228, 228, 228);
+            cursor: pointer;
+        }
+
+        .form-select {
+            font-size: 14px;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+        }
+
+        body {
+            background-color: #f8f8f8;
+        }
+
+        .btn-default {
+            color: white;
+        }
+
+        .btn-default:hover {
+            background-color: white !important;
+            color: #0b64a0 !important;
+        }
+
+        .dropbtn {
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 25);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: rgb(255, 255, 255);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #bbbbbb44;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .hovered:hover {
+            background-color: rgba(255, 255, 255, 0.192);
+        }
+
+        .rotate:hover i {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+		.sticky {
+			position: fixed;
+		}
+    </style>
+    <script lang="javascript">
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        }
+        function getUrlVars() {
+            var prefill = window.location.href.split("prefill=")[1];
+            if (!prefill) return;
+            if (prefill != "Residential" && prefill != "Commercial" && prefill != "Corporate" && prefill != "Hybrid") return;
+            document.getElementById(prefill.toLowerCase()).setAttribute("selected", "true");
+            document.getElementById("optionID").textContent = prefill;
+            document.getElementById(prefill.toLowerCase()).style.display = "block";
+            document.getElementById(prefill.toLowerCase() + "Div").style.display = "inline";
+        }
+        function getUrlParam(parameter, defaultvalue) {
+            var urlparameter = defaultvalue;
+            if (window.location.href.indexOf(parameter) > -1) {
+                getUrlVars();
+            }
+        }
+        function inputs(value) {
+            var values = [
+                "residential",
+                "commercial",
+                "corporate",
+                "hybrid"
+            ];
+            if (value === "empty") {
+                for (i in values) {
+                    document.getElementById(values[i]).style.display = "none";
+                    document.getElementById(values[i] + "Div").style.display = "none";
+                }
+            } else {
+                for (i in values) {
+                    if (values[i] === value) continue;
+                    document.getElementById(values[i]).style.display = "none";
+                    document.getElementById(values[i] + "Div").style.display = "none";
+                }
+                document.getElementById(value).style.display = "block";
+                document.getElementById(values[values.indexOf(value)] + "Div").style.display = "inline";
+            }
+            document.getElementById("recommendedShafts").value = "";
+            document.getElementById("priceUnit").value = "$0";
+            document.getElementById("costInstallations").value = "$0";
+            document.getElementById("costTotal").value = "$0";
+        }
+        function setPrices() {
+            var values = [];
+            var formselect = document.getElementById("buildingSelect");
+            var buildingType = formselect.options[formselect.selectedIndex].value;
+            var buildingLetter = buildingType.toUpperCase().slice(0, 3);
+            for (i in document.getElementsByName("quality")) {
+                if (document.getElementsByName("quality")[i].checked) values.push(document.getElementsByName("quality")[i].value);
+            }
+            var value = values[0];
+            if (value === "standard") {
+                var result = 7565;
+                var fee = 7565 * 0.1;
+            } else if (value === "premium") {
+                result = 12345;
+                fee = 12345 * 0.13;
+            } else if (value === "excelium") {
+                result = 15400;
+                fee = 15400 * 0.16;
+            } else return;
+            document.getElementById("priceUnit").value = "$" + numberWithCommas(result.toFixed(2));
+            document.getElementById("costInstallations").value = "$" + numberWithCommas(fee.toFixed(2));
+            switch (buildingType) {
+                case "commercial":
+                    if (parseInt(document.getElementsByName("elevatorsNbr" + buildingLetter)[0].value) === 0) fee = 0;
+                    var priceTotal = numberWithCommas((((result * parseInt(document.getElementsByName("elevatorsNbr" + buildingLetter)[0].value))) + fee).toFixed(2)).replace(/NaN/g, "0");
+                    document.getElementById("costTotal").value = "$" + priceTotal;
+                    break;
+                case "residential":
+                    var recommendedShafts = parseInt(document.getElementById("recommendedShafts").value);
+                    var priceTotal = numberWithCommas((recommendedShafts * result) + fee);
+                    if (recommendedShafts === 0) priceTotal = 0;
+                    document.getElementById("costTotal").value = "$" + priceTotal;
+                    break;
+                case "corporate":
+                case "hybrid":
+                    var buildingLetter = buildingType.toUpperCase().slice(0, 3);
+                    var maxOccupants = parseInt(document.getElementsByName("occupantsPerFloorNbr" + buildingLetter)[0].value);
+                    var floorsNbr = parseInt(document.getElementsByName("floorsNbr" + buildingLetter)[0].value);
+                    var totalOccupantsPerFloor = maxOccupants * floorsNbr;
+                    var totalShafts = Math.floor(totalOccupantsPerFloor / 1000);
+                    var basementsNbr = parseInt(document.getElementsByName("basementsNbr" + buildingLetter)[0].value);
+                    var totalStories = floorsNbr + basementsNbr;
+                    var elevatorCollumns = Math.floor(totalStories / 20);
+                    if (elevatorCollumns < 1) elevatorCollumns = 1;
+                    var totalElevators = Math.round(totalShafts / elevatorCollumns);
+                    
+                    var priceTotal = numberWithCommas(((result * totalElevators) + fee).toFixed(2))
+                    if (totalElevators === 0) priceTotal = 0;
+                    document.getElementById("costTotal").value = "$" + priceTotal.toString().replace(/NaN/g, "0");
+                    break;
+                    break;
+                default:
+                    if (window.location.href.includes("prefill=")) {
+                        var prefill = window.location.href.split("prefill=")[1];
+                        var formselect = document.getElementById("buildingSelect");
+                        formselect.options[formselect.selectedIndex].value = prefill.toLowerCase();
+                        setPrices();
+                    }
+                    break;
+            }
+        }
+        function setRecommendedShafts() {
+            var values = [];
+            var formselect = document.getElementById("buildingSelect");
+            var buildingType = formselect.options[formselect.selectedIndex].value;
+            switch (buildingType) {
+                case "commercial":
+                    var formselect = document.getElementById("buildingSelect");
+                    var buildingType = formselect.options[formselect.selectedIndex].value;
+                    var buildingLetter = buildingType.toUpperCase().slice(0, 3);
+                    var elevatorNbr = document.getElementsByName("elevatorsNbr" + buildingLetter)[0].value;
+                    document.getElementById("recommendedShafts").value = elevatorNbr;
+                    break;
+                case "residential":
+                    var appartmentsNbr = parseInt(document.getElementsByName("appartmentsNbrRES")[0].value);
+                    var floorsNbr = parseInt(document.getElementsByName("floorsNbrRES")[0].value) || 1;
+                    var basementsNbr = parseInt(document.getElementsByName("basementsNbrRES")[0].value) || 0;
+                    var shafts = Math.ceil(Math.ceil(appartmentsNbr / floorsNbr) / 6);
+                    if (floorsNbr > 20) {
+                        shafts = shafts * 2;
+                        var times = Math.ceil(floorsNbr / 20) - 1;
+                        if (times > 0) {
+                            for (var i = 0; i != times; i++) {
+                                shafts++;
+                            }
+                        }
+                    }
+                    if (floorsNbr < 2 && basementsNbr < 1) document.getElementById("recommendedShafts").value = 0;
+                    else document.getElementById("recommendedShafts").value = Math.ceil(shafts);
+                    break;
+                case "corporate":
+                case "hybrid":
+                    var buildingLetter = buildingType.toUpperCase().slice(0, 3);
+                    var maxOccupants = parseInt(document.getElementsByName("occupantsPerFloorNbr" + buildingLetter)[0].value);
+                    var floorsNbr = parseInt(document.getElementsByName("floorsNbr" + buildingLetter)[0].value);
+                    var totalOccupantsPerFloor = maxOccupants * floorsNbr;
+                    var totalShafts = Math.floor(totalOccupantsPerFloor / 1000);
+                    var basementsNbr = parseInt(document.getElementsByName("basementsNbr" + buildingLetter)[0].value);
+                    var totalStories = floorsNbr + basementsNbr;
+                    var elevatorCollumns = Math.floor(totalStories / 20);
+                    if (elevatorCollumns < 1) elevatorCollumns = 1;
+                    var totalElevators = Math.round(totalShafts / elevatorCollumns);
+
+                    if (isNaN(totalElevators) || isNaN(totalShafts)) return;
+                    else {
+                        document.getElementById("recommendedShafts").value = Math.ceil(totalShafts);
+                        document.getElementById("recommendedShafts").value = Math.ceil(totalElevators);
+                    }
+                    if (floorsNbr < 2 && basementsNbr < 1) document.getElementById("recommendedShafts").value = 0;
+                    break;
+                default:
+                    if (window.location.href.includes("prefill=")) {
+                        var prefill = window.location.href.split("prefill=")[1];
+                        var formselect = document.getElementById("buildingSelect")
+                        formselect.options[formselect.selectedIndex].value = prefill.toLowerCase();
+                        setRecommendedShafts();
+                    }
+                    break;
+            }
+        }
+    </script>
+        <script>
+			if (document.cookie === "EN" && document.location.href != "https://rocketelevatorsil.com/submission-form.html" && !window.location.href.includes("?prefill=")) {
+                var link = './submission-form.html';
+                if (window.location.href.indexOf("prefill") > -1) link += "?prefill=" + window.location.href.split("?prefill=")[1];
+				document.location.href = link;
+			}
+			else if (document.cookie === "FR" && document.location.href != "https://rocketelevatorsil.com/formulaire-de-soumission.html" && !window.location.href.includes("?prefill=")) {
+                var link = './formulaire-de-soumission.html';
+                if (window.location.href.indexOf("prefill") > -1) link += "?prefill=" + window.location.href.split("?prefill=")[1];
+				document.location.href = link;
+			}
+			function switchLanguage(value) {
+                document.cookie = value;
+                var link = './formulaire-de-soumission.html';
+                if (window.location.href.indexOf("prefill") > -1) {
+                    var prefill = window.location.href.split("prefill=")[1];
+                    if (prefill === "Residential") link += "?prefill=Residentiel";
+                    else if (prefill === "Commercial") link += "?prefill=Commercial";
+                    else if (prefill === "Corporate") link += "?prefill=Corporatif";
+                    else if (prefill === "Hybrid") link += "?prefill=Hybride";
+                }
+				if (value === "FR") document.location.href = link;
+				else return;
+			}
+        </script>
+</head>
+
+<body style="padding-top: 0px;"><div class="enable-animation">
+    <!-- wrapper -->
+    <div id="wrapper">
+        <div id="header" style="background-color: rgba(0,0,0,25);" class="navbar-toggleable-md sticky header-md clearfix">
+
+            <!-- TOP NAV -->
+            <header id="topNav">
+                <div class="container">
+
+                    <!-- Mobile Menu Button -->
+                    <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Logo -->
+                    <a class="logo float-left" href="https://rocketelevatorsil.com">
+                        <img src="assets/images/R2.png" alt="Rocket Elevator Logo">
+                    </a>
+                    <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+                        <nav class="nav-main">
+                            <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+                                <li class="active hovered"><!-- HOME -->
+                                    <a style="color: rgb(255,255,255);" href="https://rocketelevatorsil.com">
+                                        HOME
+                                    </a>
+                                </li>
+                                <li class="hovered"><!-- SERVICES -->
+                                    <div class="dropdown dropbtn rotate">
+                                        <a class="h-25" style="color: rgb(255,255,255);" href="https://rocketelevatorsil.com#services">
+                                            SERVICES &nbsp; <i class="fa fa-angle-right"></i>
+                                        </a>
+                                        <div class="dropdown-content">
+                                            <a href="./residential-buildings.html">Residential Buildings</a>
+                                            <a href="./corporate-buildings.html">Corporate Buildings</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="hovered"><!-- AWARDS -->
+                                    <a style="color: rgb(255,255,255);" href="https://rocketelevatorsil.com#awards">
+                                        AWARDS
+                                    </a>
+                                </li>
+                                <li class="hovered"><!-- NEWS -->
+                                    <a style="color: rgb(255,255,255);" href="https://rocketelevatorsil.com#news">
+                                        NEWS
+                                    </a>
+                                </li>
+                                <li class="hovered"><!-- CLIENTS -->
+                                    <a style="color: rgb(255,255,255);" href="https://rocketelevatorsil.com#clients">
+                                        CLIENTS
+                                    </a>
+                                </li>
+                                <li class="hovered"><!-- CONTACT -->
+                                    <a style="color: rgb(255,255,255);" href="https://rocketelevatorsil.com#contact">
+                                        CONTACT
+                                    </a>
+                                </li>
+                                <li><!-- LANGUAGE SWITHCER -->
+                                    <select onchange="switchLanguage(this.value);" style="color: black;">
+                                        <option id="EN" selected="">EN</option>
+                                        <option id="FR">FR</option>
+                                    </select>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+
+                </div>
+            </header>
+            <!-- /Top Nav -->
+        </div>
+
+    <form id="form">
+        <p style="font-size: 35px; font-style: bold;">Price Estimation Form</p>
+        <p style="font-size: 20px;">Please select your desired options</p>
+        <br>Select a building type<br>
+        <select class="form-select" onchange="inputs(this.value);" name="building-type-select" id="buildingSelect">
+            <option name="empty" id="optionID" value="empty" selected="" disabled="" hidden="">-</option>
+            <option name="residential" value="residential">Residential</option>
+            <option name="commercial" value="commercial">Commercial</option>
+            <option name="corporate" value="corporate">Corporate</option>
+            <option name="hybrid" value="hybrid">Hybrid</option>
+        </select><br><br>
+        <img class="center" id="residential" src="assets/images/residentialBuilding.jpeg" alt="Residential Building" width="400">
+        <img class="center" id="commercial" src="assets/images/commercialBuilding.jpeg" alt="Commercial Building" width="400">
+        <img class="center" id="corporate" src="assets/images/corporateBuilding.jpeg" alt="Corporate Building" width="400">
+        <img class="center" id="hybrid" src="assets/images/hybridBuilding.jpeg" alt="Hybrid Building" width="400">
+        <div id="residentialDiv">
+            Number of appartments: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="appartmentsNbrRES" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of floors: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="floorsNbrRES" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of basements: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="basementsNbrRES" min="0" oninput="this.value = Math.abs(this.value)"><br>
+        </div>
+        <div id="commercialDiv">
+            Number of floors: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="floorsNbrCOM" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of basements: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="basementsNbrCOM" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of separate businesses: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="seperateBusinessesNbrCOM" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of available parking spaces: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="parkingsNbrCOM" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of elevator shafts: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="elevatorsNbrCOM" min="0" oninput="this.value = Math.abs(this.value)"><br>
+        </div>
+        <div id="corporateDiv">
+            Number of floors: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="floorsNbrCOR" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of basements: <input placeholder="0" id="number" type="number" onchange="setRecommendedShafts(), setPrices()" name="basementsNbrCOR" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of available parking spaces: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="parkingsNbrCOR" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of separate rental companies: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="seperateRentalCompaniesNbrCOR" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Maximum amount of occupants per floor: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="occupantsPerFloorNbrCOR" min="0" oninput="this.value = Math.abs(this.value)"><br>
+        </div>
+        <div id="hybridDiv">
+            Number of floors: <input placeholder="0" id="number" type="number" onchange="setRecommendedShafts(), setPrices()" name="floorsNbrHYB" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of basements: <input placeholder="0" id="number" type="number" onchange="setRecommendedShafts(), setPrices()" name="basementsNbrHYB"><br>
+            Number of available parking spaces: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="parkingsNbrHYB" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Number of separate businesses: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="seperateBusinessesNbrHYB" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Maximum amount of occupants per floor: <input placeholder="0" id="number" onchange="setRecommendedShafts(), setPrices()" type="number" name="occupantsPerFloorNbrHYB" min="0" oninput="this.value = Math.abs(this.value)"><br>
+            Active/busy hours: <input placeholder="0" id="number24" type="number" onchange="if (this.value > 24) document.getElementById('number24').value = 24;" name="busyHoursNbrHYB" min="0" max="24" oninput="this.value = Math.abs(this.value)"><br>
+        </div>
+        <br>
+        Recommended amount of elevators: <input placeholder="0" id="recommendedShafts" value="0" type="number" disabled=""><br>
+        Select an elevator range<br>
+        <input type="radio" name="quality" onchange="setRecommendedShafts(), setPrices();" value="standard">Standard
+        <br>
+        <input type="radio" name="quality" onchange="setRecommendedShafts(), setPrices();" value="premium">Premium
+        <br>
+        <input type="radio" name="quality" onchange="setRecommendedShafts(), setPrices();" value="excelium">Excelium
+        <br><br>
+        
+    </form>
+    <div style="text-align: center;">
+        Price for 1 elevator unit: <input id="priceUnit" placeholder="$0" type="text" disabled=""><br>
+        Installation costs: <input id="costInstallations" placeholder="$0" type="text" disabled=""><br>
+        Total cost: <input id="costTotal" placeholder="$0" type="text" disabled=""><br>
+    </div>
+
+    <div class="h-100"></div>
+
+    <section id="footer">
+        <div class="container h-350">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Footer Logo -->
+                    <img class="footer-logo" src="assets/images/R2.png" alt="Rocket Elevators logo" width="250">
+
+                    <!-- Contact Address -->
+                    <address>
+                        <ul class="list-unstyled">
+                            <li class="footer-sprite address">
+                                725 Boulevard Lebourgneuf, Québec, QC G2J 0C4<br>
+                            </li>
+                            <li class="footer-sprite phone">
+                                Phone: <a href="tel:581-701-0303">(581) 701-0303</a>
+                            </li>
+                            <li class="footer-sprite email">
+                                <a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a>
+                            </li>
+                        </ul>
+                    </address>
+                    <!-- /Contact Address -->
+
+                </div>
+
+                <div class="col-md-2">
+
+                    <!-- Links -->
+                    <h4 class="letter-spacing-1">EXPLORE ROCKET ELEVATORS</h4>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="https://rocketelevatorsil.com">Home</a></li>
+                        <li><a href="https://rocketelevatorsil.com#services">Our Services</a></li>
+                        <li><a href="https://rocketelevatorsil.com#clients">Our Clients</a></li>
+                        <li><a href="https://rocketelevatorsil.com#contact">Contact Us</a></li>
+                    </ul>
+                    <!-- /Links -->
+
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                © All Rights Reserved, Rocket Elevators LTD
+            </div>
+        </div>
+        </section></div>
+    
+</div>
+
+    <script lang="javascript">
+        getUrlParam("prefill", null);
+    </script>
+		<!-- JAVASCRIPT FILES -->
+		<script>var plugin_path = 'assets/plugins/';</script>
+		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+		<script src="assets/js/scripts.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="assets/plugins

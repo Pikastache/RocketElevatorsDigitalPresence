@@ -1,0 +1,8 @@
+.container_quote{
+    border-radius: 35px;
+    padding: 10px;
+    border: 5px solid rgb(30, 200, 200);
+    text-align: center;
+    height: 450px;
+    position: relative
+};

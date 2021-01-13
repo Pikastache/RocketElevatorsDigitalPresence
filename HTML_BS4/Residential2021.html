@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Rocket Elevators - Multipurpose + Admin</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- WEB FONTS : use %7C instead of | (pipe) -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		
+		<!-- THEME CSS -->
+		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+		<!-- PAGE LEVEL SCRIPTS -->
+		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+	</head>
+
+	<!--
+		AVAILABLE BODY CLASSES:
+		
+		smoothscroll 			= create a browser smooth scroll
+		enable-animation		= enable WOW animations
+
+		bg-grey					= grey background
+		grain-grey				= grey grain background
+		grain-blue				= blue grain background
+		grain-green				= green grain background
+		grain-blue				= blue grain background
+		grain-orange			= orange grain background
+		grain-yellow			= yellow grain background
+		
+		boxed 					= boxed layout
+		pattern1 ... patern11	= pattern background
+		menu-vertical-hide		= hidden, open on click
+		
+		BACKGROUND IMAGE [together with .boxed class]
+		data-background="assets/images/boxed_background/1.jpg"
+	-->
+	<body class="smoothscroll enable-animation">
+
+		<!-- wrapper -->
+		<div id="wrapper">
+
+			<!-- 
+				AVAILABLE HEADER CLASSES
+
+				Default nav height: 96px
+				.header-md 		= 70px nav height
+				.header-sm 		= 60px nav height
+
+				.b-0 		= remove bottom border (only with transparent use)
+				.transparent	= transparent header
+				.translucent	= translucent header
+				.sticky			= sticky header
+				.static			= static header
+				.dark			= dark header
+				.bottom			= header on bottom
+				
+				shadow-before-1 = shadow 1 header top
+				shadow-after-1 	= shadow 1 header bottom
+				shadow-before-2 = shadow 2 header top
+				shadow-after-2 	= shadow 2 header bottom
+				shadow-before-3 = shadow 3 header top
+				shadow-after-3 	= shadow 3 header bottom
+
+				.clearfix		= required for mobile menu, do not remove!
+
+				Example Usage:  class="clearfix sticky header-sm transparent b-0"
+			-->
+			<div id="header" class="navbar-toggleable-md sticky transparent clearfix">
+
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">
+
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+
+						<!-- Logo -->
+						<a class="logo float-left" href="indexpkcestcomplique.html">
+							<img src="assets/images/backgrounds/R2.png" alt="" />
+						</a>
+
+						<!-- 
+							Top Nav 
+							
+							AVAILABLE CLASSES:
+							submenu-dark = dark sub menu
+						-->
+						<div class="navbar-collapse collapse float-right nav-main-collapse">
+							<nav class="nav-main">
+
+								<!-- 
+									.nav-onepage
+									Required for onepage navigation links
+									
+									Add .external for an external link!
+								-->
+								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+									<li class="active"><!-- HOME -->
+										<a target="blank_" href="indexpkcestcomplique.html">
+											HOME
+										</a>
+									</li>
+									<li><!-- SERVICES -->
+										<a target="blank_" href="indexpkcestcomplique.html#services">
+											SERVICES
+										</a>
+										<ul class="dropdown-menu">
+											<li><a target="blank_" href="indexpkcestcomplique.html">HomePage</a></li>
+											<li><a target="blank_" href="Corporate.html">Corporate</a></li>
+										</ul>
+									</li>
+									<li><!-- Project -->
+										<a target="blank_" href="indexpkcestcomplique.html#project">
+											PORTFOLIO
+										</a>
+									</li>
+									<li><!-- NEWS -->
+										<a target="blank_" href="indexpkcestcomplique.html#news">
+											NEWS
+										</a>
+									</li>
+									<li><!-- CLIENTS -->
+										<a target="blank_" href="indexpkcestcomplique.html#clients">
+											CLIENTS
+										</a>
+									</li>
+									<li><!-- CONTACT -->
+										<a target="blank_" href="indexpkcestcomplique.html#contact">
+											CONTACT
+										</a>
+									</li>
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
+				</header>
+				<!-- /Top Nav -->
+
+			</div>
+
+
+			<!-- HOME -->
+			<section id="slider" class="fullheight" style="background:url('assets/images/backgrounds/blue.jpg')">
+				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+
+				<div class="display-table">
+					<div class="display-table-cell vertical-align-middle">
+						
+						<div class="container text-center">
+							
+							<h1 class="m-0 fs-50 fw-300 wow fadeInUp" data-wow-delay="0.4s">IMPROVING THE FLOW OF URBAN LIFE</h1>
+							<p class="lead font-lato fs-30 wow fadeInUp" data-wow-delay="0.7s">Elevating the quality of your houses Since 1976</p>
+							<div class="tp-caption sfb tp-resizeme"
+								data-x="250"
+								data-y="410" 
+								data-speed="500"
+								data-start="1500"
+								data-easing="Power3.easeInOut"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="500"
+								style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
+									<a class="btn btn-default btn-lg" target="blank_" href="Quote.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
+							</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<!-- /HOME -->
+
+			
+
+			<!-- /SERVICES-->
+
+<!-- /SERVICES -->
+			<section id="features">
+				<div class="container">
+
+					<header class="text-center mb-60">
+						<h2>Our Services</h2>
+						<p class="lead font-lato">We wish to give you the most comfrotable experience while you travel through our Elevators</p>
+						<hr />
+					</header>
+
+					<!-- FEATURED BOXES 3 -->
+					<div class="row">
+						<div class="col-md-3 col-6">
+							<div class="text-center">
+								<img src="http://cdn.onlinewebfonts.com/svg/download_391970.png" width="55px" />
+								<h4>Smart Device</h4>
+								<p>Can connect to your smart phone and give you news through our Rocket Elevators app</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-6">
+							<div class="text-center">
+								<img src="https://image.flaticon.com/icons/png/512/1/1110.png" width="55px" />
+								<h4>Service</h4>
+								<p>Rocket Elevators main goal is to satisfy there client</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-6">
+							<div class="text-center">
+								<img src="https://th.bing.com/th/id/OIP.QS-4IMbFPnWntqYzVXYCVQHaHa?pid=Api&rs=1" width="55px" />
+								<h4>Efficient</h4>
+								<p>Rocket Elevators strives to be has fast has possible while staying reliable.</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-6">
+							<div class="text-center">
+								<img src="https://cdn.onlinewebfonts.com/svg/img_138783.png" width="55px" />
+								<h4>Safe</h4>
+								<p>Rocket Elevators Provides there Customer with a safe environment </p>
+							</div>
+						</div>
+					</div>
+					<!-- /FEATURED BOXES 3 -->
+
+					<!-- Services -->
+			<section id="services">
+				<div class="container">
+
+					<div class="row">
+						<div class="col-sm-4">
+							
+								</span>
+								<img class="img-fluid" src="assets/images/backgrounds/thumbs up.jpg" alt="img" />
+							</a>
+
+							<h3 class="mt-10">Low cost installation</h3>
+							<p>At Rocket Elevators, We found a way to make our material cheaper while still being reliable, safe and solid</p>
+						</div>
+
+						<div class="col-sm-4">
+								<img class="img-fluid" src="assets/images/backgrounds/true disabled.jpg" alt="img" />
+							</a>
+							<h3 class="mt-10">Helpful to the disabled ones</h3>
+							<p>If you suffer from a desease that gives you a hard time going up your own stairs, Rocket Elevators has a solution for your problem!</p>
+						</div>
+
+						<div class="col-sm-4">
+							<img class="img-fluid" src="assets/images/backgrounds/nature 1.jpg" alt="img" />
+							<h3 class="mt-10">Saving the environment</h3>
+							<p>Rocket Elevators also made sure that their product would be low carbon footprint efficient</p>
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /Services -->
+
+			<!-- TESTIMONIALS -->
+			<section id="testimonials" class="alternate">
+				<div class="container">
+
+					<header class="text-center mb-60">
+						<h2>Testimonials</h2>
+						<p class="lead font-lato">What does the people think of Rocket Elevator</p>
+						<hr />
+					</header>
+
+					<!-- 
+						Note: remove class="rounded" from the img for squared image!
+					-->
+					<div class="row mb-60">
+						<div class="col-md-4">
+							<div class="testimonial testimonial-bordered p-15">
+								<figure class="float-left">
+									<img class="rounded" src="assets/images/comments/trudo.jpg" alt="" />
+								</figure>
+								<div class="testimonial-content">
+									<p>My Elevator from Rocket Elevator is beautiful, good and i love it. </p>
+									<cite>
+										Trudeau
+										<span>Company Ltd.</span>
+									</cite>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="testimonial testimonial-bordered p-15">
+								<figure class="float-left">
+									<img class="rounded" src="assets/images/comments/trump.jpg" alt="" />
+								</figure>
+								<div class="testimonial-content">
+									<p>Getting to the third floor of my giant mansion to brush my theet from all the shit that comes out of my mouth has never been easier, Thank you so much Rocket Elevator, you truly are the best!</p>
+									<cite>
+										Donald Trump
+										<span>Company Ltd.</span>
+									</cite>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="testimonial testimonial-bordered p-15">
+								<figure class="float-left">
+									<img class="rounded" src="assets/images/comments/kim jong 1.jpg" alt="" />
+								</figure>
+								<div class="testimonial-content">
+									<p> 轟炸美國人從未如此簡單 Rocket Elevators! </p>
+									<cite>
+										Kim Jong-Un
+										<span>Company Ltd.</span>
+									</cite>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 
+						Note: remove class="rounded" from the img for squared image!
+					-->
+					<ul class="row clearfix testimonial-dotted list-unstyled">
+						<li class="col-md-4">
+							<div class="testimonial">
+								<figure class="float-left">
+									<img class="rounded" src="assets/images/comments/poutine.jpg" alt="" />
+								</figure>
+								<div class="testimonial-content">
+									<p>Since ive installed my first elevator from Rocket Elevators, I can go to my favorite Poutine store much more easiely and securly than with any other elevator</p>
+									<cite>
+										President Putin
+										<span>Company Ltd.</span>
+									</cite>
+								</div>
+							</div>
+						</li>
+						<li class="col-md-4">
+							<div class="testimonial">
+								<figure class="float-left">
+									<img class="rounded" src="assets/images/comments/arin.jpg" alt="" />
+								</figure>
+								<div class="testimonial-content">
+									<p>Wow, just WOW. Ive never seen a company as embitious has Rocket Elevators and they are one of the few companies who stay true to there words.</p>
+									<cite>
+										Arin
+										<span>Company Ltd.</span>
+									</cite>
+								</div>
+							</div>
+						</li>
+						<li class="col-md-4">
+							<div class="testimonial">
+								<figure class="float-left">
+									<img class="rounded" src="assets/images/comments/dan.jpg" alt="" />
+								</figure>
+								<div class="testimonial-content">
+									<p>Rocket Elevator has just been a joy lately. They made so much progress in the industry and are simply the most qualified.</p>
+									<cite>
+										Dan
+										<span>Company Ltd.</span>
+									</cite>
+								</div>
+							</div>
+						</li>
+						<li class="col-md-4">
+							<div class="testimonial">
+								<figure class="float-left">
+									<img class="rounded" src="assets/images/comments/yobama.png" alt="" />
+								</figure>
+								<div class="testimonial-content">
+									<p>Rocket Elevators...mmmh, strong the force is with this one.</p>
+									<cite>
+										Yobama
+										<span>Company Ltd.</span>
+									</cite>
+								</div>
+							</div>
+						</li>
+						<li class="col-md-4">
+							<div class="testimonial">
+								<figure class="float-left">
+									<img class="rounded" src="assets/images/comments/Kanye-e1596129748391.jpg" alt="" />
+								</figure>
+								<div class="testimonial-content">
+									<p>Goddamn this company they must be crazy men, i might be striving to become president but they be striving to revolutionize the whole world!</p>
+									<cite>
+										Kanye west
+										<span>Company Ltd.</span>
+									</cite>
+								</div>
+							</div>
+						</li>
+						<li class="col-md-4">
+							<div class="testimonial">
+								<figure class="float-left">
+									<img class="rounded" src="assets/images/comments/karne.jpg" alt="" />
+								</figure>
+								<div class="testimonial-content">
+									<p>Stop Saying stuff like this they arent even all that gooooood URGH. Your not even worth my time im too great for ignorants like you all :((( </p>
+									<cite>
+										Karen Stacy
+										<span>Company Ltd.</span>
+									</cite>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+			</section>
+			<!-- /TESTIMONIALS -->
+
+			<!-- BUTTON CALLOUT -->
+<a target="blank_" href="Quote.html" class="btn btn-xlg btn-pogo fs-20 fullwidth m-0 rad-0 p-40">
+	<span class="font-lato fs-30">
+		Did Rocket Elevator convinced you?    
+		<strong>GET A QUOTE! </strong>
+	</span>
+</a>
+<!-- /BUTTON CALLOUT -->
+
+		</div>
+		<!-- /wrapper -->
+
+	
+		
+		<!-- SCROLL TO TOP -->
+		<a href="#" id="toTop"></a>
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<div class="container">
+
+
+				<div class="row">
+
+					<!-- col #1 -->
+					<div class="col-md-8">
+
+						<h3 class="letter-spacing-1">WHY OUR COMPANY?</h3>
+
+						<!-- Small Description -->
+						<p>
+							Our Company Worries about your experience at Rocket Elevator. If you wish to discuss with us, give us a call and we will be very happy to discuss with you to satisfy all your elevator needs!
+						</p>
+						<h2>+1(581)-701-0303</h2>
+					</div>
+					<!-- /col #1 -->
+
+					<!-- col #2 -->
+					<div class="col-md-4">
+						<h3 class="letter-spacing-1">UPDATE US?</h3>
+
+						<!-- Newsletter Form -->
+						<p>Subscribe to Our Facebook page to get Important News & Offers</p>
+
+						<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+								<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+								<span class="input-group-btn">
+									<button class="btn btn-success" type="submit">Subscribe</button>
+								</span>
+							</div>
+						</form>
+						<!-- /Newsletter Form -->
+
+
+					</div>
+					<!-- /col #2 -->
+
+				</div>
+
+
+			</div>
+
+			<div class="copyright">
+				<div class="container">
+					<ul class="float-right m-0 list-inline mobile-block">
+						<li><a href="#">Terms &amp; Conditions</a></li>
+						<li>&bull;</li>
+						<li><a href="#">Privacy</a></li>
+					</ul>
+					&copy; All Rights Reserved, Company LTD
+				</div>
+			</div>
+
+		</footer>
+		<!-- /FOOTER -->
+
+
+		<!-- PRELOADER -->
+		<div id="preloader">
+			<div class="inner">
+				<span class="loader"></span>
+			</div>
+		</div><!-- /PRELOADER -->
+
+
+		<!-- JAVASCRIPT FILES -->
+		<script>var plugin_path = 'assets/plugins/';</script>
+		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+
+		<script src="assets/js/scripts.js"></script>
+		
+		<!-- STYLESWITCHER - REMOVE -->
+		<script async src="demo_files/styleswitcher/styleswitcher.js"></script>
+	</body>
+</html>
