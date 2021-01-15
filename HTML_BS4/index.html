@@ -55,7 +55,8 @@
 
 				Example Usage:  class="clearfix sticky header-sm transparent b-0"
 			-->
-			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+			<div id="header" style="background-color: rgba(0,0,0,25);" class="navbar-toggleable-md sticky header-md clearfix">
 
 				<!-- TOP NAV -->
 				<header id="topNav">
@@ -67,7 +68,7 @@
 						</button>
 
 						<!-- Logo -->
-						<a class="logo float-left" href="index.html">
+						<a class="logo float-left" href="#top">
 							<img src="assets/images/_RocketElevators/rocketelev.png" alt="" />
 						</a>
 
@@ -89,41 +90,41 @@
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 									<li class="active">
 										<!-- HOME -->
-										<a target="blank_" href="#slider">
+										<a style="color: rgb(255,255,255);" href="#top">
 											HOME
 										</a>
 									</li>
 									<li>
 										<!-- SERVICES -->
-										<a target="blank_" href="#services">
+										<a style="color: rgb(255,255,255);" href="#services">
 											SERVICES
 										</a>
 										<ul class="dropdown-menu">
-											<li><a href="residential.html">Residential</a></li>
-											<li><a href="corporate.html">Corporate</a></li>
+											<li><a target="blank_" href="residential.html">Residential</a></li>
+											<li><a target="blank_" href="corporate.html">Corporate</a></li>
 										</ul>
 									</li>
 									<li>
 										<!-- Project -->
-										<a target="blank_" href="#project">
+										<a style="color: rgb(255,255,255);" href="#portfolio">
 											PORTFOLIO
 										</a>
 									</li>
 									<li>
 										<!-- NEWS -->
-										<a target="blank_" href="#news">
+										<a style="color: rgb(255,255,255);" href="#news">
 											NEWS
 										</a>
 									</li>
 									<li>
 										<!-- CLIENTS -->
-										<a target="blank_" href="#clients">
+										<a style="color: rgb(255,255,255);" href="#clients">
 											CLIENTS
 										</a>
 									</li>
 									<li>
 										<!-- CONTACT -->
-										<a target="blank_" href="#contact">
+										<a style="color: rgb(255,255,255);" href="#contact">
 											CONTACT
 										</a>
 									</li>
@@ -1213,7 +1214,7 @@
 							</div><!-- /Alert Mandatory -->
 
 
-							<form action="php/contact.php" method="post" enctype="multipart/form-data">
+							<!-- <form action="php/contact.php" method="post" enctype="multipart/form-data"></form> -->
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
@@ -1271,14 +1272,15 @@
 											</div>
 									</div>
 
+
 								</fieldset>
 								
 								<div class="row">
 									<div class="col-md-12">
-										<button type="submit" class="btn btn-green"><i class="fa fa-check"></i> SEND MESSAGE</button>
+										<button type="submit" class="btn btn-green" onclick="Myfunction()"><i class="fa fa-check"></i> SEND MESSAGE</button>
 									</div>
 								</div>
-							</form>
+							<!-- </form> -->
 
 						</div>
 						<!-- /FORM -->
@@ -1304,7 +1306,7 @@
 								h-600
 							-->
 							
-							<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2729.043180175514!2d-71.28188348439583!3d46.842839879141394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x4cb897d0e1cafe3f%3A0x9863b2d992c71670!2sCodeBoxx%2C%20418-725%20Boulevard%20Lebourgneuf%2C%20Quebec%20City%2C%20Quebec%20G2J%200C4!3m2!1d46.8428399!2d-71.2796948!5e0!3m2!1sen!2sca!4v1610503950595!5m2!1sen!2sca" width="350" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.042993790022!2d-71.28188884849648!3d46.84284354831331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb897d0e1cafe3f%3A0x9863b2d992c71670!2sCodeBoxx!5e0!3m2!1sen!2sca!4v1610721192955!5m2!1sen!2sca" width="350" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 							<hr />
 
 							<p>
@@ -1407,7 +1409,7 @@
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 
 		<script src="assets/js/scripts.js"></script>
-		
+		<script src="assets/js/Messagesent.js"></script>
 		
 
 		<!-- REVOLUTION SLIDER -->

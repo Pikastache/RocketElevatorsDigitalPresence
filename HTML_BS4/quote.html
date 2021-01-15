@@ -91,7 +91,7 @@
 
 						<!-- Logo -->
 						<a class="logo float-left" href="index.html">
-							<img src="assets/images/backgrounds/R2.png" alt="" />
+							<img src="assets/images/_RocketElevators/rocketelev.png" alt="" />
 						</a>
 
 						<!-- 
@@ -175,7 +175,142 @@
 					</div>
 				</div>
 			</section>
-			<!-- /HOME -->
+            <!-- /HOME -->
+            
+            <!-- FORM -->
+		
+				<fieldset>
+					<input type="hidden" name="action" value="submission_send" />
+		
+					<!--SUBMISSION-->
+
+		
+							<header class="text-center mb-60">
+								<h2>Getting a quote:</h2>
+								</header>
+						
+
+						<div class="container">
+							<div class="row">
+								<h3>choses an option</h3>
+						<select class="form-control pointer" id="Building_option"> 
+							<option value="select">---select---</option>
+							<option value="residential">residential</option>
+							<option value="commercial">commercial</option>
+							<option value="corporate">corporate</option>
+							<option value="hybrid">hybrid</option>
+						</select>
+						<br><br><br>
+						
+						 <div id="quotebox" class="building_type row" >
+							<div class="col-md-10 marge row " id="number_of_appartment">
+								<label for="number_of_appartment">number_of_appartment</label>
+								<input type="text" value="" class="form-control" name="number_of_appartment" id="number_of_appartment_input">
+							</div>
+		
+							<div class="col-md-10 marge row " id="number_of_floors">
+								<label for="number_of_floors">number_of_floors</label>
+								<input required type="email" value="" class="form-control" name="number_of_floors" id="number_of_floors_input">
+							</div>
+		
+							<div class="col-md-10 marge row " id="number_of_basement">
+								<label for=":number_of_basement">number_of_basement</label>
+								<input type="text" value="" class="form-control" name="number_of_basement" id="number_of_basement_input">
+							</div>
+
+							
+							<div class="col-md-4 marge " id="number_of_businesses">
+								<label for="number_of_businesses">number_of_businesses</label>
+								<input required type="text" value="" class="form-control" name="number_of_businesses" id="number_of_businesses_input">
+							</div>
+
+							<div class="col-md-4 marge " id="number_of_parking">
+								<label for="number_of_parking">number_of_parking</label>
+								<input type="text" value="" class="form-control" name="number_of_parking" id="number_of_parking_input">
+							</div>
+
+							<div class="col-md-4 marge " id="number_of_Elevator_cages">
+								<label for="number_of_elevator_cages">number_of_Elevator_cages</label>
+								<input type="text" value="" class="form-control" name="number_of_Elevator_cages" id="number_of_Elevator_cages_input">
+							</div>
+
+							<div class="col-md-4 marge " id="number_of_tenant_companies">
+								<label for="number_of_tenant_companies">number_of_tenant_companies</label>
+								<input type="text" value="" class="form-control" name="number_of_tenant_companies" id="number_of_tenant_companies_input">
+							</div>
+
+							<div class="col-md-4 marge " id="nb_occup_per_floors">
+								<label for="number_of_occupents_per_floors">number_of_occupents_per_floors</label>
+								<input required type="email" value="" class="form-control" name="nb_occup_per_floors" id="number_of_occupents_per_floors_input">
+							</div>
+
+							<div class="col-md-4 marge " id="number_of_hours_of_activity_in_the_building">
+								<label for="number_of_hours_of_activity_in_the_building">number_of_hours_of_activity_in_the_building</label>
+								<input type="text" value="" class="form-control" name="number_of_hours_of_activity_in_the_building" id="number_of_hours_of_activity_in_the_building_input">
+							</div>
+
+							<!-- RadioType -->
+
+							
+						<div class="container" id="Product">
+							<br>
+							<p><strong>Radio type</strong></p>
+							<input type="radio" name="services" value="7565" id="standard_services" onclick="math2()" > Standard - $7565<br><br>
+							<input type="radio" name="services" value="12345" id="premium_sevices" onclick="math2()" > Premium - $12,345<br><br>
+							<input type="radio" name="services" value="15400" id="excelium_services" onclick="math2()" > Excelium - $15,400<br><br>
+							
+	
+
+							<!-- Boxes -->
+
+							<div id="RecoElev" class="col-md-4">
+								<label>Recommended Elevator</label>
+								<input type="number" class="form-control" id="ElevatorRec_input" readonly="">
+							</div>
+
+							<div id="InstaCost" class="col-md-4">
+								<label>Installation Fee</label>
+								<input type="number" class="form-control" id="InstaCost_input" readonly="">
+							</div>
+
+							<div id=PricePerElevator class="col-md-4">
+								<label>Price Per Elevator</label>
+								<input type="number" class="form-control" id="PricePerElevator_input" readonly="">
+							</div>
+
+							<div id="TotalElev" class="col-md-4">
+								<label>Total Number Of Elevator</label>
+								<input type="number" class="form-control" id="TotalElev_input" readonly="">
+							</div>
+
+							<div id=PriceTotal class="col-md-4">
+								<label>Total Price</label>
+								<input type="number" class="form-control" id="PriceTotal_input" readonly="">
+							</div>
+
+							
+						
+							
+						<!--Residential-->
+					  
+			<!-- -->
+			<section class="alternate p-10">
+				<div class="container">
+					
+					<div class="text-center">
+						<h2 class="wow fadeInUp m-0" data-wow-delay="0.3s">LOOKS LIKE ROCKET ELEVATOR CONVICED YOU!</h2>
+
+						<p class="lead font-lato fs-30 wow fadeInUp mb-60" data-wow-delay="0.5s">We hope your new elevator will bring a smile on your face.</p>
+						
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- / -->
+
+		<!-- /wrapper -->
+
 
 		<!-- FOOTER -->
         <footer id="footer">
@@ -255,4 +390,4 @@
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 
 		<script src="assets/js/scripts.js"></script>
-		<script src="assets/js/Quote.js"></script>
+		<script src="assets/js/quote.js"></script>
