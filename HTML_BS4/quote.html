@@ -210,7 +210,7 @@
 		
 							<div class="col-md-10 marge row " id="number_of_floors">
 								<label for="number_of_floors">number_of_floors</label>
-								<input required type="email" value="" class="form-control" name="number_of_floors" id="number_of_floors_input">
+								<input required type="text" value="" class="form-control" name="number_of_floors" id="number_of_floors_input">
 							</div>
 		
 							<div class="col-md-10 marge row " id="number_of_basement">
@@ -241,7 +241,7 @@
 
 							<div class="col-md-4 marge " id="nb_occup_per_floors">
 								<label for="number_of_occupents_per_floors">number_of_occupents_per_floors</label>
-								<input required type="email" value="" class="form-control" name="nb_occup_per_floors" id="number_of_occupents_per_floors_input">
+								<input type="text" required type="email" value="" class="form-control" name="nb_occup_per_floors" id="number_of_occupents_per_floors_input">
 							</div>
 
 							<div class="col-md-4 marge " id="number_of_hours_of_activity_in_the_building">
@@ -255,9 +255,14 @@
 						<div class="container" id="Product">
 							<br>
 							<p><strong>Radio type</strong></p>
-							<input type="radio" name="services" value="7565" id="standard_services" onclick="math2()" > Standard - $7565<br><br>
-							<input type="radio" name="services" value="12345" id="premium_sevices" onclick="math2()" > Premium - $12,345<br><br>
-							<input type="radio" name="services" value="15400" id="excelium_services" onclick="math2()" > Excelium - $15,400<br><br>
+							<input type="radio" name="services" value="7565">
+							 Standard - $7565<br><br>
+
+							<input type="radio" name="services" value="12345"> 
+							Premium - $12,345<br><br>
+
+							<input type="radio" name="services" value="15400">
+							Excelium - $15,400<br><br>
 							
 	
 
@@ -265,27 +270,28 @@
 
 							<div id="RecoElev" class="col-md-4">
 								<label>Recommended Elevator</label>
-								<input type="number" class="form-control" id="ElevatorRec_input" readonly="">
-							</div>
-
-							<div id="InstaCost" class="col-md-4">
-								<label>Installation Fee</label>
-								<input type="number" class="form-control" id="InstaCost_input" readonly="">
+								<input type="text" class="form-control" id="ElevatorRec_input" readonly="">
 							</div>
 
 							<div id=PricePerElevator class="col-md-4">
 								<label>Price Per Elevator</label>
-								<input type="number" class="form-control" id="PricePerElevator_input" readonly="">
+								<input type="text" class="form-control" id="PricePerElevator_input" readonly="">
+							</div>
+							
+							<div id="InstaCost" class="col-md-4">
+								<label>Installation Fee</label>
+								<input type="text" class="form-control" id="InstaCost_input" readonly="">
 							</div>
 
-							<div id="TotalElev" class="col-md-4">
-								<label>Total Number Of Elevator</label>
-								<input type="number" class="form-control" id="TotalElev_input" readonly="">
+
+							<div id="TotalCostforElev" class="col-md-4">
+								<label>prices for all the elevator</label>
+								<input type="text" class="form-control" id="TotalElev_input" readonly="">
 							</div>
 
 							<div id=PriceTotal class="col-md-4">
 								<label>Total Price</label>
-								<input type="number" class="form-control" id="PriceTotal_input" readonly="">
+								<input type="text" class="form-control" id="PriceTotal_input" readonly="">
 							</div>
 
 							
@@ -332,27 +338,7 @@
                     </div>
                     <!-- /col #1 -->
 
-                    <!-- col #2 -->
-                    <div class="col-md-4">
-                        <h3 class="letter-spacing-1">UPDATE US?</h3>
-
-                        <!-- Newsletter Form -->
-                        <p>Subscribe to Our Facebook page to get Important News & Offers</p>
-
-                        <form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                <input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-success" type="submit">Subscribe</button>
-                                </span>
-                            </div>
-                        </form>
-                        <!-- /Newsletter Form -->
-
-
-                    </div>
-                    <!-- /col #2 -->
+                  
 
                 </div>
 
