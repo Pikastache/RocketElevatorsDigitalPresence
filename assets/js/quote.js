@@ -134,7 +134,7 @@ $("#Building_option").on('change', function (){
       var numer_colon = Math.ceil(NumberOfFloors.value / 20);
       console.log(numer_colon)
       var ElevatorPerColon =  numer_colon * elevCage;
-      console.log(ElevatorPerColon + "ElevatorPerColon")
+      console.log(ElevatorPerColon)
       RecommendedElevator.value = ElevatorPerColon
     };
 
@@ -157,39 +157,34 @@ $("#Building_option").on('change', function (){
 
     $("input[type='radio']").on('click', function(){
         var type = $("input[name='services']:checked").val();
-
-        var UP = 0.00;
-        var installP = 0.00; 
-        var totalP = 0.00;
-
-        if(document.getElementById("Product").checked) {
-            UP = 7565.00;
-            installP = UP * RecommendedElevator * 0.1;
-            totalP = UP * RecommendedElevator + installP;
-            document.getElementById("PricePerElevator_input").value = UP;
-            document.getElementById("InstaCost_input").value = installP;
-            document.getElementById("PriceTotal_input").value = totalP;
-           
+        if(type == "7565"){
+            PricePerElevator.value = type;
+            TotalCostforElev.value = parseint(PricePerElevator.value) * parseint(RecommendedElevator.value);
+            var instal = TotalCostforElev.value * 0.16;
+            console.log(instal + "intstal")
+            InstaCost.value = intstal;
+            InstaCost.value = intstal;
+            PriceTotal.value = (parseint(InstaCost.value) + parseint(TotalCostforElev.value))
         }
 
-        if(document.getElementById("Product").checked) {
-            UP = 12345.00;
-            installP = UP * RecommendedElevator * 0.13;
-            totalP = UP * RecommendedElevator + installP;
-            document.getElementById("PricePerElevator_input").value = UP;
-            document.getElementById("InstaCost_input").value = installP;
-            document.getElementById("PriceTotal_input").value = totalP;
-            
+        if(type == "12345"){
+            PricePerElevator.value = type;
+            TotalCostforElev.value = parseint(PricePerElevator.value) * parseint(RecommendedElevator.value);
+            var instal = TotalCostforElev.value * 0.16;
+            console.log(instal + "intstal")
+            InstaCost.value = intstal;
+            InstaCost.value = intstal;
+            PriceTotal.value = (parseint(InstaCost.value) + parseint(TotalCostforElev.value))
         }
 
-        if(document.getElementById("Product").checked) {
-            UP = 15400.00;
-            installP = UP * RecommendedElevator * 0.16;
-            totalP = UP * RecommendedElevator + installP;
-            document.getElementById("PricePerElevator_input").value = UP;
-            document.getElementById("InstaCost_input").value = installP;
-            document.getElementById("PriceTotal_input").value = totalP;
-            
+        if(type == "15400"){
+            PricePerElevator.value = type;
+            TotalCostforElev.value = parseint(PricePerElevator.value) * parseint(RecommendedElevator.value);
+            var instal = TotalCostforElev.value * 0.16;
+            console.log(instal + "intstal")
+            InstaCost.value = intstal;
+            InstaCost.value = intstal;
+            PriceTotal.value = (parseint(InstaCost.value) + parseint(TotalCostforElev.value))
         }
 
 
