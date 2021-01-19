@@ -1,12 +1,12 @@
-$("#number_of_appartment").hide();
-$("#number_of_floors").hide();
-$("#number_of_basement").hide();
-$("#number_of_businesses").hide();
-$("#number_of_parking").hide();
-$("#number_of_Elevator_cages").hide();
-$("#number_of_tenant_companies").hide();
-$("#nb_occup_per_floors").hide();
-$("#number_of_hours_of_activity_in_the_building").hide();
+$("#number-of-apartments").hide();
+$("#number-of-floors").hide();
+$("#number-of-basements").hide();
+$("#number-of-companies").hide();
+$("#number-of-parking-spots").hide();
+$("#number-of-elevators").hide();
+$("#number-of-corporations").hide();
+$("#maximum-occupancy").hide();
+$("#business-hours").hide();
 $("#RecoElev").hide();
 $("#InstaCost").hide();
 $("#PricePerElevator").hide();
@@ -20,15 +20,15 @@ $("#Building_option").on('change', function (){
 
     if (chooses == "select" ){
         console.log("select");
-        $("#number_of_appartment").hide();
-        $("#number_of_floors").hide();
-        $("#number_of_basement").hide();
-        $("#number_of_businesses").hide();
-        $("#number_of_parking").hide();
-        $("#number_of_Elevator_cages").hide();
-        $("#number_of_tenant_companies").hide();
-        $("#nb_occup_per_floors").hide();
-        $("#number_of_hours_of_activity_in_the_building").hide(); 
+        $("#number-of-apartments").hide();
+        $("#number-of-floors").hide();
+        $("#number-of-basements").hide();
+        $("#number-of-companies").hide();
+        $("#number-of-parking-spots").hide();
+        $("#number-of-elevators").hide();
+        $("#number-of-corporations").hide();
+        $("#maximum-occupancy").hide();
+        $("#business-hours").hide(); 
         $("#RecoElev").hide();
         $("#InstaCost").hide();
         $("#PricePerElevator").hide();
@@ -37,15 +37,15 @@ $("#Building_option").on('change', function (){
     };
     
     if(chooses == "residential" ){
-        $("#number_of_appartment").show();
-        $("#number_of_floors").show();
-        $("#number_of_basement").show();
-        $("#number_of_businesses").hide();
-        $("#number_of_parking").hide();
-        $("#number_of_Elevator_cages").hide();
-        $("#number_of_tenant_companies").hide();
-        $("#nb_occup_per_floors").hide();
-        $("#number_of_hours_of_activity_in_the_building").hide();
+        $("#number-of-apartments").show();
+        $("#number-of-floors").show();
+        $("#number-of-basements").show();
+        $("#number-of-companies").hide();
+        $("#number-of-parking-spots").hide();
+        $("#number-of-elevators").hide();
+        $("#number-of-corporations").hide();
+        $("#maximum-occupancy").hide();
+        $("#business-hours").hide();
         $("#RecoElev").show();
         $("#InstaCost").show();
         $("#PricePerElevator").show();
@@ -54,15 +54,15 @@ $("#Building_option").on('change', function (){
     };
 
     if(chooses == "commercial" ){
-        $("#number_of_appartment").hide();
-        $("#number_of_floors").show();
-        $("#number_of_basement").show();
-        $("#number_of_businesses").show();
-        $("#number_of_parking").show();
-        $("#number_of_Elevator_cages").show();
-        $("#number_of_tenant_companies").hide();
-        $("#nb_occup_per_floors").hide();
-        $("#number_of_hours_of_activity_in_the_building").hide();
+        $("#number-of-apartments").hide();
+        $("#number-of-floors").show();
+        $("#number-of-basements").show();
+        $("#number-of-companies").show();
+        $("#number-of-parking-spots").show();
+        $("#number-of-elevators").show();
+        $("#number-of-corporations").hide();
+        $("#maximum-occupancy").hide();
+        $("#business-hours").hide();
         $("#RecoElev").show();
         $("#InstaCost").show();
         $("#PricePerElevator").show();
@@ -71,15 +71,15 @@ $("#Building_option").on('change', function (){
     };
 
     if(chooses == "corporate" ){
-        $("#number_of_appartment").hide();
-        $("#number_of_floors").show();
-        $("#number_of_basement").show();
-        $("#number_of_businesses").hide();
-        $("#number_of_parking").show();
-        $("#number_of_Elevator_cages").hide();
-        $("#number_of_tenant_companies").show();
-        $("#nb_occup_per_floors").show();
-        $("#number_of_hours_of_activity_in_the_building").hide();
+        $("#number-of-apartments").hide();
+        $("#number-of-floors").show();
+        $("#number-of-basements").show();
+        $("#number-of-companies").hide();
+        $("#number-of-parking-spots").show();
+        $("#number-of-elevators").hide();
+        $("#number-of-corporations").show();
+        $("#maximum-occupancy").show();
+        $("#business-hours").hide();
         $("#RecoElev").show();
         $("#InstaCost").show();
         $("#PricePerElevator").show();
@@ -88,15 +88,15 @@ $("#Building_option").on('change', function (){
     };
 
     if(chooses == "hybrid" ){
-        $("#number_of_appartment").hide();
-        $("#number_of_floors").show();
-        $("#number_of_basement").show();
-        $("#number_of_businesses").show();
-        $("#number_of_parking").show();
-        $("#number_of_Elevator_cages").hide();
-        $("#number_of_tenant_companies").hide();
-        $("#nb_occup_per_floors").show();
-        $("#number_of_hours_of_activity_in_the_building").show();
+        $("#number-of-apartments").hide();
+        $("#number-of-floors").show();
+        $("#number-of-basements").show();
+        $("#number-of-companies").show();
+        $("#number-of-parking-spots").show();
+        $("#number-of-elevators").hide();
+        $("#number-of-corporations").hide();
+        $("#maximum-occupancy").show();
+        $("#business-hours").show();
         $("#RecoElev").show();
         $("#InstaCost").show();
         $("#PricePerElevator").show();
@@ -105,17 +105,17 @@ $("#Building_option").on('change', function (){
     };
 
     console.log(chooses);
-});
+  });
 
-    var NumberOfAppartment = document.getElementById("number_of_appartment_input");
-    var NumberOfFloors = document.getElementById("number_of_floors_input");
-    var NumberOfBasement = document.getElementById("number_of_basement_input");
-    var NumberOfBusinesses = document.getElementById("number_of_businesses_input");
-    var NumberOfParking = document.getElementById("number_of_parking_input");
-    var NumberOfElevatorCages = document.getElementById("number_of_Elevator_cages_input");
-    var NumberOfTenantCompanies = document.getElementById("number_of_tenant_companies_input");
-    var NumberOfOccupentsPerFloors = document.getElementById("number_of_occupents_per_floors_input");
-    var NumberOfHoursOfActivityInTheBuilding = document.getElementById("number_of_hours_of_activity_in_the_building_input");
+    var NumberOfAppartment = document.getElementById("number-of-apartments_input");
+    var NumberOfFloors = document.getElementById("number-of-floors_input");
+    var NumberOfBasement = document.getElementById("number-of-basements_input");
+    var NumberOfBusinesses = document.getElementById("number-of-companies_input");
+    var NumberOfParking = document.getElementById("number-of-parking-spots_input");
+    var NumberOfElevatorCages = document.getElementById("number-of-elevators_input");
+    var NumberOfTenantCompanies = document.getElementById("number-of-corporations_input");
+    var NumberOfOccupentsPerFloors = document.getElementById("maximum-occupancy_input");
+    var NumberOfHoursOfActivityInTheBuilding = document.getElementById("business-hours_input");
     var RecommendedElevator = document.getElementById("ElevatorRec_input");
     var InstaCost = document.getElementById("InstaCost_input");
     var PricePerElevator = document.getElementById("PricePerElevator_input");
@@ -134,40 +134,62 @@ $("#Building_option").on('change', function (){
       var numer_colon = Math.ceil(NumberOfFloors.value / 20);
       console.log(numer_colon)
       var ElevatorPerColon =  numer_colon * elevCage;
-      console.log(ElevatorPerColon)
+      console.log(ElevatorPerColon + "ElevatorPerColon")
       RecommendedElevator.value = ElevatorPerColon
     };
 
     function Corporate_Hybrid () {
-        var TotalFloors = parseInt(NumberOfFloors.value) + parseInt(NumberOfBasement.value)
-        console.log(TotalFloors)
-        var AllOccupents = NumberOfOccupentsPerFloors.value * TotalFloors
-        console.log(AllOccupents)
-        var TotalElevator = Math.ceil(AllOccupents / 1000)
-        console.log(TotalElevator)
-        var NumColon = TotalElevator / 20
-        console.log(NumColon.value)
-        var ElevatorPerColon = TotalElevator / NumColon
-        console.log(ElevatorPerColon.value)
-        var TotalNbOfelevator = ElevatorPerColon * NumColon
-        console.log(TotalNbOfelevator)
-        RecommendedElevator.value = TotalNbOfelevator
+    var total_Floors = NumberOfFloors.value + NumberOfBasement.value;
+    console.log(total_Floors + " total_Floors");
+    var totalPersonnes =  NumberOfOccupentsPerFloors.value * total_Floors;
+    console.log(totalPersonnes + " totalPersonnes");
+    var Number_elevator = Math.ceil(totalPersonnes / 1000);
+    console.log(Number_elevator + " Number_elevator");
+    var number_colone = Math.ceil(total_Floors / 20);
+    console.log(number_colone + " number_colone");
+    var elevator_per_colone = Math.ceil(Number_elevator / number_colone);
+    console.log(elevator_per_colone + " elevator_per_colone");
+    var total =  elevator_per_colone * number_colone;
+    console.log(total + " total");
+    RecommendedElevator.value = total;
     };
 
 
     $("input[type='radio']").on('click', function(){
         var type = $("input[name='services']:checked").val();
-        if(type == "7565"){
-            PricePerElevator.value = type;
-            TotalCostforElev.value = PricePerElevator.value * RecommendedElevator.value
+
+        var UP = 0.00;
+        var installP = 0.00; 
+        var totalP = 0.00;
+
+        if(document.getElementById("Product").checked) {
+            UP = 7565.00;
+            installP = UP * RecommendedElevator * 0.1;
+            totalP = UP * RecommendedElevator + installP;
+            document.getElementById("PricePerElevator_input").value = UP;
+            document.getElementById("InstaCost_input").value = installP;
+            document.getElementById("PriceTotal_input").value = totalP;
+           
         }
 
-        if(type == "12345"){
-            PricePerElevator.value = type;
+        if(document.getElementById("Product").checked) {
+            UP = 12345.00;
+            installP = UP * RecommendedElevator * 0.13;
+            totalP = UP * RecommendedElevator + installP;
+            document.getElementById("PricePerElevator_input").value = UP;
+            document.getElementById("InstaCost_input").value = installP;
+            document.getElementById("PriceTotal_input").value = totalP;
+            
         }
 
-        if(type == "15400"){
-            PricePerElevator.value = type;
+        if(document.getElementById("Product").checked) {
+            UP = 15400.00;
+            installP = UP * RecommendedElevator * 0.16;
+            totalP = UP * RecommendedElevator + installP;
+            document.getElementById("PricePerElevator_input").value = UP;
+            document.getElementById("InstaCost_input").value = installP;
+            document.getElementById("PriceTotal_input").value = totalP;
+            
         }
 
 
@@ -198,3 +220,4 @@ $("#Building_option").on('change', function (){
       
     });
     
+//j'aime pas mon coach!!!
