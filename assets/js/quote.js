@@ -12,6 +12,7 @@ $("#InstaCost").hide();
 $("#PricePerElevator").hide();
 $("#TotalCostforElev").hide();
 $("#PriceTotal").hide();
+$("#Product").hide();
 
 $("#Building_option").on('change', function (){
     var chooses = $("#Building_option option:selected").val();
@@ -34,6 +35,7 @@ $("#Building_option").on('change', function (){
         $("#PricePerElevator").hide();
         $("#TotalCostforElev").hide();
         $("#PriceTotal").hide();
+        $("#Product").hide();
     };
     
     if(chooses == "residential" ){
@@ -51,6 +53,7 @@ $("#Building_option").on('change', function (){
         $("#PricePerElevator").show();
         $("#TotalCostforElev").show();
         $("#PriceTotal").show();
+        $("#Product").show();
     };
 
     if(chooses == "commercial" ){
@@ -68,6 +71,7 @@ $("#Building_option").on('change', function (){
         $("#PricePerElevator").show();
         $("#TotalCostforElev").show();
         $("#PriceTotal").show();
+        $("#Product").show();
     };
 
     if(chooses == "corporate" ){
@@ -85,6 +89,7 @@ $("#Building_option").on('change', function (){
         $("#PricePerElevator").show();
         $("#TotalCostforElev").show();
         $("#PriceTotal").show();
+        $("#Product").show();
     };
 
     if(chooses == "hybrid" ){
@@ -102,6 +107,7 @@ $("#Building_option").on('change', function (){
         $("#PricePerElevator").show();
         $("#TotalCostforElev").show();
         $("#PriceTotal").show();
+        $("#Product").show();
     };
 
     console.log(chooses);
@@ -164,7 +170,7 @@ $("#Building_option").on('change', function (){
             var instal = TotalCostforElev.value * 0.10;
             console.log(instal + "instal")
             InstaCost.value = instal;
-            PriceTotal.value = InstaCost.value + TotalCostforElev.value
+            PriceTotal.value = (parseInt(InstaCost.value) + parseInt(TotalCostforElev.value)).toFixed(2);
         }
 
         if(type == "12345"){
@@ -174,7 +180,7 @@ $("#Building_option").on('change', function (){
             var instal = TotalCostforElev.value * 0.13;
             console.log(instal + "instal")
             InstaCost.value = instal;
-            PriceTotal.value = InstaCost.value + TotalCostforElev.value
+            PriceTotal.value = (parseInt(InstaCost.value) + parseInt(TotalCostforElev.value)).toFixed(2);
         }
 
         if(type == "15400"){
@@ -184,7 +190,7 @@ $("#Building_option").on('change', function (){
             var instal = TotalCostforElev.value * 0.16;
             console.log(instal + "instal")
             InstaCost.value = instal;
-            PriceTotal.value = InstaCost.value + TotalCostforElev.value
+            PriceTotal.value = (parseInt(InstaCost.value) + parseInt(TotalCostforElev.value)).toFixed(2);
         }
 
 

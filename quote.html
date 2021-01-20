@@ -78,7 +78,7 @@
 
 				Example Usage:  class="clearfix sticky header-sm transparent b-0"
 			-->
-			<div id="header" class="navbar-toggleable-md sticky transparent clearfix">
+			<div id="header" style="background-color: rgba(0,0,0);" class="navbar-toggleable-md sticky header-md clearfix">
 
 				<!-- TOP NAV -->
 				<header id="topNav">
@@ -110,37 +110,43 @@
 									Add .external for an external link!
 								-->
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active"><!-- HOME -->
-										<a target="blank_" href="index.html">
+									<li class="active">
+										<!-- HOME -->
+										<a style="color: rgb(255,255,255);" href="index.html">
 											HOME
 										</a>
 									</li>
-									<li><!-- SERVICES -->
-										<a target="blank_" href="#services">
+									<li>
+										<!-- SERVICES -->
+										<a style="color: rgb(255,255,255);" href="index.html#services">
 											SERVICES
 										</a>
 										<ul class="dropdown-menu">
-											<li><a href="residential.html">Residential</a></li>
-											<li><a href="corporate.html">Corporate</a></li>
+											<li><a target="blank_" href="residential.html">Residential</a></li>
+											<li><a target="blank_" href="corporate.html">Corporate</a></li>
 										</ul>
 									</li>
-									<li><!-- Project -->
-										<a target="blank_" href="index.html#project">
+									<li>
+										<!-- Project -->
+										<a style="color: rgb(255,255,255);" href="index.html#portfolio">
 											PORTFOLIO
 										</a>
 									</li>
-									<li><!-- NEWS -->
-										<a target="blank_" href="index.html#news">
+									<li>
+										<!-- NEWS -->
+										<a style="color: rgb(255,255,255);" href="index.html#news">
 											NEWS
 										</a>
 									</li>
-									<li><!-- CLIENTS -->
-										<a target="blank_" href="index.html#clients">
+									<li>
+										<!-- CLIENTS -->
+										<a style="color: rgb(255,255,255);" href="index.html#clients">
 											CLIENTS
 										</a>
 									</li>
-									<li><!-- CONTACT -->
-										<a target="blank_" href="index.html#contact">
+									<li>
+										<!-- CONTACT -->
+										<a style="color: rgb(255,255,255);" href="index.html#contact">
 											CONTACT
 										</a>
 									</li>
@@ -263,6 +269,7 @@
 
 							<input type="radio" name="services" value="15400">
 							Excelium - $15,400 - 16%<br><br>
+						
 							
 	
 
@@ -277,16 +284,15 @@
 								<label>Price Per Elevator</label>
 								<input type="number" class="form-control" id="PricePerElevator_input" readonly="">
 							</div>
-							
-							<div id="InstaCost" class="col-md-4">
-								<label>Installation Fee</label>
-								<input type="number" class="form-control" id="InstaCost_input" readonly="">
-							</div>
-
 
 							<div id="TotalCostforElev" class="col-md-4">
 								<label>Prices for all the elevator</label>
 								<input type="number" class="form-control" id="TotalCostforElev_input" readonly="">
+							</div>
+
+							<div id="InstaCost" class="col-md-4">
+								<label>Installation Fee</label>
+								<input type="number" class="form-control" id="InstaCost_input" readonly="">
 							</div>
 
 							<div id=PriceTotal class="col-md-4">
@@ -299,6 +305,7 @@
 							
 						<!--Residential-->
 					  
+						
 			<!-- -->
 			<section class="alternate p-10">
 				<div class="container">
