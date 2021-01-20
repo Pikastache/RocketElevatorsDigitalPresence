@@ -159,32 +159,32 @@ $("#Building_option").on('change', function (){
         var type = $("input[name='services']:checked").val();
         if(type == "7565"){
             PricePerElevator.value = type;
-            TotalCostforElev.value = parseint(PricePerElevator.value) * parseint(RecommendedElevator.value);
-            var instal = TotalCostforElev.value * 0.16;
-            console.log(instal + "intstal")
-            InstaCost.value = intstal;
-            InstaCost.value = intstal;
-            PriceTotal.value = (parseint(InstaCost.value) + parseint(TotalCostforElev.value))
+            TotalCostforElev.value = PricePerElevator.value * RecommendedElevator.value;
+            console.log(TotalCostforElev.value)
+            var instal = TotalCostforElev.value * 0.10;
+            console.log(instal + "instal")
+            InstaCost.value = instal;
+            PriceTotal.value = InstaCost.value + TotalCostforElev.value
         }
 
         if(type == "12345"){
             PricePerElevator.value = type;
-            TotalCostforElev.value = parseint(PricePerElevator.value) * parseint(RecommendedElevator.value);
-            var instal = TotalCostforElev.value * 0.16;
-            console.log(instal + "intstal")
-            InstaCost.value = intstal;
-            InstaCost.value = intstal;
-            PriceTotal.value = (parseint(InstaCost.value) + parseint(TotalCostforElev.value))
+            TotalCostforElev.value = PricePerElevator.value * RecommendedElevator.value;
+            console.log(PricePerElevator.value)
+            var instal = TotalCostforElev.value * 0.13;
+            console.log(instal + "instal")
+            InstaCost.value = instal;
+            PriceTotal.value = InstaCost.value + TotalCostforElev.value
         }
 
         if(type == "15400"){
             PricePerElevator.value = type;
-            TotalCostforElev.value = parseint(PricePerElevator.value) * parseint(RecommendedElevator.value);
+            console.log(TotalCostforElev.value)
+            TotalCostforElev.value = PricePerElevator.value * RecommendedElevator.value;
             var instal = TotalCostforElev.value * 0.16;
-            console.log(instal + "intstal")
-            InstaCost.value = intstal;
-            InstaCost.value = intstal;
-            PriceTotal.value = (parseint(InstaCost.value) + parseint(TotalCostforElev.value))
+            console.log(instal + "instal")
+            InstaCost.value = instal;
+            PriceTotal.value = InstaCost.value + TotalCostforElev.value
         }
 
 
@@ -215,4 +215,3 @@ $("#Building_option").on('change', function (){
       
     });
     
-//j'aime pas mon coach!!!
