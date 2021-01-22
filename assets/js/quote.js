@@ -14,12 +14,13 @@ $("#TotalCostforElev").hide();
 $("#PriceTotal").hide();
 $("#Product").hide();
 
-$("#Building_option").on('change', function (){
+$("#Building_option").on('change', function () {
     var chooses = $("#Building_option option:selected").val();
     console.log("select");
+    console.log(currency(3));
 
 
-    if (chooses == "select" ){
+    if (chooses == "select") {
         console.log("select");
         $("#number-of-apartments").hide();
         $("#number-of-floors").hide();
@@ -29,7 +30,7 @@ $("#Building_option").on('change', function (){
         $("#number-of-elevators").hide();
         $("#number-of-corporations").hide();
         $("#maximum-occupancy").hide();
-        $("#business-hours").hide(); 
+        $("#business-hours").hide();
         $("#RecoElev").hide();
         $("#InstaCost").hide();
         $("#PricePerElevator").hide();
@@ -37,8 +38,8 @@ $("#Building_option").on('change', function (){
         $("#PriceTotal").hide();
         $("#Product").hide();
     };
-    
-    if(chooses == "residential" ){
+
+    if (chooses == "residential") {
         $("#number-of-apartments").show();
         $("#number-of-floors").show();
         $("#number-of-basements").show();
@@ -56,7 +57,7 @@ $("#Building_option").on('change', function (){
         $("#Product").show();
     };
 
-    if(chooses == "commercial" ){
+    if (chooses == "commercial") {
         $("#number-of-apartments").hide();
         $("#number-of-floors").show();
         $("#number-of-basements").show();
@@ -74,7 +75,7 @@ $("#Building_option").on('change', function (){
         $("#Product").show();
     };
 
-    if(chooses == "corporate" ){
+    if (chooses == "corporate") {
         $("#number-of-apartments").hide();
         $("#number-of-floors").show();
         $("#number-of-basements").show();
@@ -92,7 +93,7 @@ $("#Building_option").on('change', function (){
         $("#Product").show();
     };
 
-    if(chooses == "hybrid" ){
+    if (chooses == "hybrid") {
         $("#number-of-apartments").hide();
         $("#number-of-floors").show();
         $("#number-of-basements").show();
@@ -111,43 +112,44 @@ $("#Building_option").on('change', function (){
     };
 
     console.log(chooses);
-  });
+});
 
-    var NumberOfAppartment = document.getElementById("number-of-apartments_input");
-    var NumberOfFloors = document.getElementById("number-of-floors_input");
-    var NumberOfBasement = document.getElementById("number-of-basements_input");
-    var NumberOfBusinesses = document.getElementById("number-of-companies_input");
-    var NumberOfParking = document.getElementById("number-of-parking-spots_input");
-    var NumberOfElevatorCages = document.getElementById("number-of-elevators_input");
-    var NumberOfTenantCompanies = document.getElementById("number-of-corporations_input");
-    var NumberOfOccupentsPerFloors = document.getElementById("maximum-occupancy_input");
-    var NumberOfHoursOfActivityInTheBuilding = document.getElementById("business-hours_input");
-    var RecommendedElevator = document.getElementById("ElevatorRec_input");
-    var InstaCost = document.getElementById("InstaCost_input");
-    var PricePerElevator = document.getElementById("PricePerElevator_input");
-    var TotalCostforElev = document.getElementById("TotalCostforElev_input");
-    var PriceTotal = document.getElementById("PriceTotal_input");
+var NumberOfAppartment = document.getElementById("number-of-apartments_input");
+var NumberOfFloors = document.getElementById("number-of-floors_input");
+var NumberOfBasement = document.getElementById("number-of-basements_input");
+var NumberOfBusinesses = document.getElementById("number-of-companies_input");
+var NumberOfParking = document.getElementById("number-of-parking-spots_input");
+var NumberOfElevatorCages = document.getElementById("number-of-elevators_input");
+var NumberOfTenantCompanies = document.getElementById("number-of-corporations_input");
+var NumberOfOccupentsPerFloors = document.getElementById("maximum-occupancy_input");
+var NumberOfHoursOfActivityInTheBuilding = document.getElementById("business-hours_input");
+var RecommendedElevator = document.getElementById("ElevatorRec_input");
+var InstaCost = document.getElementById("InstaCost_input");
+var PricePerElevator = document.getElementById("PricePerElevator_input");
+var TotalCostforElev = document.getElementById("TotalCostforElev_input");
+var PriceTotal = document.getElementById("PriceTotal_input");
 
-    function commercial () {
-        RecommendedElevator.value = NumberOfElevatorCages.value
-    };
 
-    function residential () {
-      var AverageOfApartment = NumberOfAppartment.value / NumberOfFloors.value;
-      console.log(AverageOfApartment + " taf")
-      var elevCage = Math.ceil(AverageOfApartment / 6);
-      console.log(elevCage + " elevCage")
-      var numer_colon = Math.ceil(NumberOfFloors.value / 20);
-      console.log(numer_colon)
-      var ElevatorPerColon =  numer_colon * elevCage;
-      console.log(ElevatorPerColon)
-      RecommendedElevator.value = ElevatorPerColon
-    };
+function commercial() {
+    RecommendedElevator.value = NumberOfElevatorCages.value
+};
 
-    function Corporate_Hybrid () {
+function residential() {
+    var AverageOfApartment = NumberOfAppartment.value / NumberOfFloors.value;
+    console.log(AverageOfApartment + " taf")
+    var elevCage = Math.ceil(AverageOfApartment / 6);
+    console.log(elevCage + " elevCage")
+    var numer_colon = Math.ceil(NumberOfFloors.value / 20);
+    console.log(numer_colon)
+    var ElevatorPerColon = numer_colon * elevCage;
+    console.log(ElevatorPerColon)
+    RecommendedElevator.value = ElevatorPerColon
+};
+
+function Corporate_Hybrid() {
     var total_Floors = NumberOfFloors.value + NumberOfBasement.value;
     console.log(total_Floors + " total_Floors");
-    var totalPersonnes =  NumberOfOccupentsPerFloors.value * total_Floors;
+    var totalPersonnes = NumberOfOccupentsPerFloors.value * total_Floors;
     console.log(totalPersonnes + " totalPersonnes");
     var Number_elevator = Math.ceil(totalPersonnes / 1000);
     console.log(Number_elevator + " Number_elevator");
@@ -155,69 +157,71 @@ $("#Building_option").on('change', function (){
     console.log(number_colone + " number_colone");
     var elevator_per_colone = Math.ceil(Number_elevator / number_colone);
     console.log(elevator_per_colone + " elevator_per_colone");
-    var total =  elevator_per_colone * number_colone;
+    var total = elevator_per_colone * number_colone;
     console.log(total + " total");
     RecommendedElevator.value = total;
-    };
+};
+var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD', });
+
+$("input[type='radio']").on('click', function () {
+    var type = $("input[name='services']:checked").val();
+    if (type == "7565") {
+        PricePerElevator.value = type;
+        TotalCostforElev.value = PricePerElevator.value * RecommendedElevator.value;
+        console.log(TotalCostforElev.value)
+        var instal = TotalCostforElev.value * 0.10;
+        console.log(instal + "instal")
+        InstaCost.value = instal;
+        PriceTotal.value = formatter.format(parseFloat(InstaCost.value) + parseFloat(TotalCostforElev.value));
+    }
+
+    if (type == "12345") {
+        PricePerElevator.value = type;
+        TotalCostforElev.value = PricePerElevator.value * RecommendedElevator.value;
+        console.log(PricePerElevator.value)
+        var instal = TotalCostforElev.value * 0.13;
+        console.log(instal + "instal")
+        InstaCost.value = instal;
+        PriceTotal.value = formatter.format(parseFloat(InstaCost.value) + parseFloat(TotalCostforElev.value));
+    }
+
+    if (type == "15400") {
+        PricePerElevator.value = type;
+        console.log(TotalCostforElev.value)
+        TotalCostforElev.value = PricePerElevator.value * RecommendedElevator.value;
+        var instal = TotalCostforElev.value * 0.16;
+        console.log(instal + "instal")
+        InstaCost.value = instal;
+        PriceTotal.value = formatter.format(parseFloat(InstaCost.value) + parseFloat(TotalCostforElev.value));
+        
+    }
 
 
-    $("input[type='radio']").on('click', function(){
-        var type = $("input[name='services']:checked").val();
-        if(type == "7565"){
-            PricePerElevator.value = type;
-            TotalCostforElev.value = PricePerElevator.value * RecommendedElevator.value;
-            console.log(TotalCostforElev.value)
-            var instal = TotalCostforElev.value * 0.10;
-            console.log(instal + "instal")
-            InstaCost.value = instal;
-            PriceTotal.value = (parseInt(InstaCost.value) + parseInt(TotalCostforElev.value)).toFixed(2);
-        }
+});
 
-        if(type == "12345"){
-            PricePerElevator.value = type;
-            TotalCostforElev.value = PricePerElevator.value * RecommendedElevator.value;
-            console.log(PricePerElevator.value)
-            var instal = TotalCostforElev.value * 0.13;
-            console.log(instal + "instal")
-            InstaCost.value = instal;
-            PriceTotal.value = (parseInt(InstaCost.value) + parseInt(TotalCostforElev.value)).toFixed(2);
-        }
+$("input").on('keyup click', function () {
+    var TypeValue = $("#Building_option option:selected").val();
 
-        if(type == "15400"){
-            PricePerElevator.value = type;
-            console.log(TotalCostforElev.value)
-            TotalCostforElev.value = PricePerElevator.value * RecommendedElevator.value;
-            var instal = TotalCostforElev.value * 0.16;
-            console.log(instal + "instal")
-            InstaCost.value = instal;
-            PriceTotal.value = (parseInt(InstaCost.value) + parseInt(TotalCostforElev.value)).toFixed(2);
-        }
-
-
-    });
-
-    $("input").on('keyup click',function () {
-        var TypeValue = $("#Building_option option:selected").val();
-       
-       if(TypeValue=="residential"){
+    if (TypeValue == "residential") {
         residential();
-        
-       }
-    
-       if(TypeValue=="commercial"){
+
+    }
+
+    if (TypeValue == "commercial") {
         commercial();
-        
-              
-       }
-       if(TypeValue=="corporate"){
+
+
+    }
+    if (TypeValue == "corporate") {
         Corporate_Hybrid();
-             
-       }
-    
-       if(TypeValue=="hybrid"){
+
+    }
+
+    if (TypeValue == "hybrid") {
         Corporate_Hybrid();
-       
-       }
-      
-    });
-    
+
+    }
+
+});
